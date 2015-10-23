@@ -26,7 +26,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
     }
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-       // ctx.writeAndFlush(firstMessage);
     	ctx.writeAndFlush(buildLoginReq());
         System.out.println("客户端active");
     }
@@ -37,11 +36,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
         System.out.println("客户端收到服务器响应数据");
         NettyMessage message=(NettyMessage)msg;
         System.out.println("message:"+message.getHeader());
-//        ByteBuf buf=(ByteBuf) msg;
-//        byte[] req=new byte[buf.readableBytes()];
-//        buf.readBytes(req);
-//        String body=new String(req,"UTF-8");
-//        System.out.println("Now is:"+body);
         Thread.sleep(5000);
         ctx.writeAndFlush(buildLoginReq());
        

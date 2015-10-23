@@ -20,14 +20,6 @@ public class ServerHandler extends ChannelHandlerAdapter {
 		System.out.println(message.getHeader().toString());
 		
         System.out.println("服务器读取到客户端请求...");
-//        ByteBuf buf=(ByteBuf) msg;
-//        byte[] req=new byte[buf.readableBytes()];
-//        buf.readBytes(req);
-       // String body=new String(req,"UTF-8");
-        //System.out.println("the time server receive order:"+body);
-       // String curentTime="QUERY TIME ORDER".equalsIgnoreCase(body)?new Date(System.currentTimeMillis()).toString():"BAD ORDER";
-      //  ByteBuf resp=Unpooled.copiedBuffer(curentTime.getBytes());
-       // ctx.write(resp);
         ctx.write(msg);
         System.out.println("服务器做出了响应");
     }

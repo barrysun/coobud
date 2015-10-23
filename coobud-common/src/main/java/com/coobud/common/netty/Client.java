@@ -53,7 +53,7 @@ public class Client {
     public static void main(String[] args) throws Exception {
     	CurrentProcessId.printCurrentProcessId();
     	
-        new Client().connect(8889, args[0]);
+        new Client().connect(8889, "127.0.0.1");
     }
     
  
